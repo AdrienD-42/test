@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "nom": "jhon",
+      "prenom": "Doe",
+      "email": "jhon_doe@gmail.com",
+      "password": "$2b$10$C1ZtkIy0HMCs78FacjmleOoAj3yQN0O3Mb0TW7Iz6mq1fZPkgGDry"
+    }
+  ]
+}
