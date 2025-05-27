@@ -1,15 +1,33 @@
 {
-"recettes" : [
-  {
-    "id" : 0 ,
-    "titre": "Crêpes sucrées",
-    "ingredients": [
-      "2 œufs",
-      "250ml de lait",
-      "125g de farine",
-      "1 c. à soupe de sucre"
-    ],
-    "instructions": "Mélanger les ingrédients et cuire dans une poêle chaude."
-  }
-]
+  "recettes": [
+    {
+      "id": "0",
+      "titre": "Crêpes sucrées",
+      "ingredients": [
+        "2 œufs",
+        "250ml de lait",
+        "125g de farine",
+        "1 c. à soupe de sucre"
+      ],
+      "instructions": "Mélanger les ingrédients et cuire dans une poêle chaude.",
+      "idCreateur": 1
+    },
+    {
+      "id": "2",
+      "titre": "test",
+      "ingredients": [
+        "eee",
+        "eee",
+        "eee"
+      ],
+      "instructions": "eee"
+    },
+    {
+      "id": "3",
+      "titre": "",
+      "ingredients": [],
+      "instructions": ""
+    }
+
+  ]
 }

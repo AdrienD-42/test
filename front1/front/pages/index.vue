@@ -6,6 +6,7 @@
         {{ recette.titre }}
       </li>
     </ul>
+    <NuxtLink to="/ajouterRecette">form</NuxtLink>
   </div>
 </template>
 

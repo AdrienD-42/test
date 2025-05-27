@@ -4,6 +4,7 @@ const URL = 'http://localhost:5000/recettes'
 export const useRecettesStore = defineStore('recettes', {
     state: () => ({
         recettes: [] as Recette[]
+
     }),
     actions: {
         async chargerRecette() {
@@ -16,16 +17,25 @@ export const useRecettesStore = defineStore('recettes', {
         },
 
         async ajouterRecette(recette : Recette){
+            console.log(localStorage.getItem('token'))
             try {
-                const nouvelleRecette = await $fetch<Recette> (URL , {
-                    method :'POST' ,
-                    body : 'recette'
-                })
-                if (nouvelleRecette && nouvelleRecette.id) {
-                    this.recettes.push(nouvelleRecette)
-                } else {
-                    console.warn('La recette a été envoyée, mais la réponse est invalide.')
+                if (localStorage.getItem('token') !== null){
+                    console.log(localStorage.getItem('token'))
+                    recette.id = this.recettes.length + 1
+                    const nouvelleRecette = await $fetch<Recette> (URL , {
+                        method :'POST' ,
+                        body : recette
+                    })
+                    if (nouvelleRecette && nouvelleRecette.id) {
+                        this.recettes.push(nouvelleRecette)
+                    } else {
+                        console.warn('La recette a été envoyée, mais la réponse est invalide.')
+                    }
                 }
+                else {
+                    console.log('pas authentifier')
+                }
+
             }catch (error){
                 console.log("Erreur store recette : POST \n" + error)
             }
@@ -57,5 +67,6 @@ export const useRecettesStore = defineStore('recettes', {
             }
 
         }
+
     }
 })
