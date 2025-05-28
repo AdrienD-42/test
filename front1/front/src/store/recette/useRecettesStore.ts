@@ -16,57 +16,68 @@ export const useRecettesStore = defineStore('recettes', {
             }
         },
 
-        async ajouterRecette(recette : Recette){
+        async ajouterRecette(recette: Recette) {
             console.log(localStorage.getItem('token'))
             try {
-                if (localStorage.getItem('token') !== null){
+                if (localStorage.getItem('token') !== null) {
                     console.log(localStorage.getItem('token'))
                     recette.id = this.recettes.length + 1
-                    const nouvelleRecette = await $fetch<Recette> (URL , {
-                        method :'POST' ,
-                        body : recette
+                    const nouvelleRecette = await $fetch<Recette>(URL, {
+                        method: 'POST',
+                        body: recette
                     })
                     if (nouvelleRecette && nouvelleRecette.id) {
                         this.recettes.push(nouvelleRecette)
                     } else {
                         console.warn('La recette a été envoyée, mais la réponse est invalide.')
                     }
-                }
-                else {
+                } else {
                     console.log('pas authentifier')
                 }
 
-            }catch (error){
+            } catch (error) {
                 console.log("Erreur store recette : POST \n" + error)
             }
-        } ,
+        },
 
-        async modifierRecette (recette : Recette){
-            try{
-                const recetteModifier = await $fetch<Recette>(URL+"/"+recette.id ,{
-                    method : 'PUT' ,
-                    body : recette
+        async modifierRecette(recette: Recette) {
+            try {
+                const recetteModifier = await $fetch<Recette>(URL + "/" + recette.id, {
+                    method: 'PUT',
+                    body: recette
                 });
-                const index  = this.recettes.findIndex(r => r.id === recette.id)
-                if (index !== null){
-                    this.recettes[index] = recette ;
+                const index = this.recettes.findIndex(r => r.id === recette.id)
+                if (index !== null) {
+                    this.recettes[index] = recette;
                 }
-            }catch (error){
-                console.log("Erreur store recette : PUT \n" + error) ;
+            } catch (error) {
+                console.log("Erreur store recette : PUT \n" + error);
+            }
+
+        },
+
+        async supprimmerRecette(idRecette: Number) {
+            try {
+                const delrecette = await $fetch(URL + '/' + idRecette, {
+                    method: 'DELETE'
+                })
+            } catch (error) {
+                console.log("Erreur store recette : DELETE \n" + error);
             }
 
         } ,
-
-        async supprimmerRecette (idRecette :Number){
-            try{
-                const delrecette = await $fetch(URL+'/'+idRecette , {
-                    method :'DELETE'
-                })
-            }catch (error){
-                console.log("Erreur store recette : DELETE \n" + error) ;
+        async findRecetteById(id: number): Promise<Recette | null> {
+            try {
+                const response = await $fetch<Recette>(`${URL}/${id.toString()}`, { method: 'GET' })
+                console.log(response.titre + "aaaaaaaaaaaa")
+                return response
+            } catch (err) {
+                console.log(err)
+                return null
             }
-
         }
 
+
     }
+
 })

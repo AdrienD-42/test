@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, onMounted } from 'vue'
+import { reactive } from 'vue'
 import 'vuetify/styles'
 import type { Recette } from '~/src/obj/recette'
 import { useRecettesStore } from '~/src/store/recette/useRecettesStore'
@@ -10,22 +10,31 @@ const recette = reactive<Recette>({
   id: 0,
   titre: '',
   ingredients: [],
-  instructions: ''
+  instructions: '',
+  type: 'ENTREE',
+  dateAjout: new Date(),
+  like: 0
 })
 
 function ajouterIngredient() {
   recette.ingredients.push('')
 }
-function supprimmerIngredient(){
-  recette.ingredients.splice(recette.ingredients.length - 1 , 1)
+
+function supprimmerIngredient() {
+  recette.ingredients.pop()
 }
 
 async function envoyer() {
-
+  recette.dateAjout = new Date()
   await useRecetteStore.ajouterRecette(recette)
 
+  recette.id = 0
+  recette.titre = ''
+  recette.ingredients = []
+  recette.instructions = ''
+  recette.type = 'ENTREE'
+  recette.like = 0
 }
-
 </script>
 
 <template>
@@ -40,6 +49,15 @@ async function envoyer() {
               v-model="recette.titre"
               class="mb-4"
               outlined
+              required
+          />
+
+          <v-select
+              v-model="recette.type"
+              :items="['ENTREE', 'PLAT', 'DESSERT']"
+              label="Type de recette"
+              outlined
+              class="mb-4"
               required
           />
 
@@ -81,8 +99,8 @@ async function envoyer() {
       </v-card>
     </v-container>
   </v-app>
-
 </template>
+
 <style scoped>
 .v-card-title {
   border-bottom: 1px solid #ddd;

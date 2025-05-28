@@ -1,33 +1,95 @@
 {
   "recettes": [
     {
-      "id": "0",
-      "titre": "Crêpes sucrées",
-      "ingredients": [
-        "2 œufs",
-        "250ml de lait",
-        "125g de farine",
-        "1 c. à soupe de sucre"
-      ],
-      "instructions": "Mélanger les ingrédients et cuire dans une poêle chaude.",
-      "idCreateur": 1
+      "id": "1",
+      "titre": "Salade de chèvre chaud",
+      "ingredients": ["fromage de chèvre", "salade verte", "miel", "pain", "huile d'olive"],
+      "instructions": "Grillez le pain avec du fromage de chèvre dessus, puis servez sur un lit de salade assaisonnée au miel.",
+      "type": "ENTREE",
+      "dateAjout": "2025-05-10T00:00:00.000Z",
+      "like": 34
     },
     {
-      "id": "2",
-      "titre": "test",
-      "ingredients": [
-        "eee",
-        "eee",
-        "eee"
-      ],
-      "instructions": "eee"
+      "id": 2,
+      "titre": "Soupe de potiron",
+      "ingredients": ["potiron", "oignon", "crème fraîche", "bouillon de légumes"],
+      "instructions": "Faites revenir l’oignon, ajoutez le potiron et le bouillon, laissez mijoter, mixez et ajoutez la crème.",
+      "type": "ENTREE",
+      "dateAjout": "2025-05-11T00:00:00.000Z",
+      "like": 27
     },
     {
-      "id": "3",
-      "titre": "",
-      "ingredients": [],
-      "instructions": ""
+      "id": 3,
+      "titre": "Lasagnes bolognaises",
+      "ingredients": ["pâtes à lasagne", "viande hachée", "tomates", "béchamel", "fromage râpé"],
+      "instructions": "Alternez couches de pâtes, viande à la tomate, béchamel et fromage, puis enfournez 40 min à 180°C.",
+      "type": "PLAT",
+      "dateAjout": "2025-05-12T00:00:00.000Z",
+      "like": 58
+    },
+    {
+      "id": 4,
+      "titre": "Couscous royal",
+      "ingredients": ["semoule", "agneau", "merguez", "poulet", "légumes", "pois chiches"],
+      "instructions": "Préparez les viandes et légumes séparément, servez sur de la semoule bien gonflée.",
+      "type": "PLAT",
+      "dateAjout": "2025-05-13T00:00:00.000Z",
+      "like": 41
+    },
+    {
+      "id": 5,
+      "titre": "Poulet curry coco",
+      "ingredients": ["poulet", "lait de coco", "curry", "riz", "oignon"],
+      "instructions": "Faites revenir l’oignon, ajoutez le poulet, puis le lait de coco et le curry. Servez avec du riz.",
+      "type": "PLAT",
+      "dateAjout": "2025-05-14T00:00:00.000Z",
+      "like": 36
+    },
+    {
+      "id": 6,
+      "titre": "Tarte aux pommes",
+      "ingredients": ["pâte brisée", "pommes", "sucre", "beurre", "cannelle"],
+      "instructions": "Disposez les pommes sur la pâte, saupoudrez de sucre et cannelle, ajoutez du beurre, enfournez.",
+      "type": "DESSERT",
+      "dateAjout": "2025-05-15T00:00:00.000Z",
+      "like": 49
+    },
+    {
+      "id": 7,
+      "titre": "Fondant au chocolat",
+      "ingredients": ["chocolat", "beurre", "œufs", "sucre", "farine"],
+      "instructions": "Faites fondre chocolat et beurre, ajoutez œufs, sucre, farine. Enfournez 12 min à 200°C.",
+      "type": "DESSERT",
+      "dateAjout": "2025-05-16T00:00:00.000Z",
+      "like": 61
+    },
+    {
+      "id": 8,
+      "titre": "Mousse au citron",
+      "ingredients": ["citron", "œufs", "sucre", "crème fraîche"],
+      "instructions": "Battez les jaunes avec le sucre et citron, ajoutez la crème, puis les blancs montés en neige.",
+      "type": "DESSERT",
+      "dateAjout": "2025-05-17T00:00:00.000Z",
+      "like": 23
+    },
+    {
+      "id": 9,
+      "titre": "Bruschetta à la tomate",
+      "ingredients": ["pain grillé", "tomates", "ail", "basilic", "huile d'olive"],
+      "instructions": "Frottez le pain à l’ail, ajoutez tomates coupées, basilic et un filet d’huile d’olive.",
+      "type": "ENTREE",
+      "dateAjout": "2025-05-18T00:00:00.000Z",
+      "like": 30
+    },
+    {
+      "id": 10,
+      "titre": "Gratin dauphinois",
+      "ingredients": ["pommes de terre", "crème", "lait", "ail", "fromage râpé"],
+      "instructions": "Coupez les pommes de terre, disposez-les dans un plat avec ail, crème et fromage, enfournez.",
+      "type": "PLAT",
+      "dateAjout": "2025-05-19T00:00:00.000Z",
+      "like": 52
     }
-
   ]
+
 }
